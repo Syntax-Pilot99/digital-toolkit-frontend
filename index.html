@@ -3,204 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Digital Toolkit</title>
-    <script src="https://js.stripe.com/v3/"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #0b0f19;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 16px;
-            padding: 30px;
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-        .badge {
-            background: #2563eb;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        h1 span {
-            color: #3b82f6;
-        }
-        p.subtitle {
-            color: #9ca3af;
-            font-size: 14px;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .price-box {
-            background: #1f2937;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-        }
-        .bundle-title {
-            font-size: 16px;
-            color: #9ca3af;
-            margin-bottom: 5px;
-        }
-        .price {
-            font-size: 36px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-        .price span {
-            font-size: 16px;
-            color: #6b7280;
-            text-decoration: line-through;
-            margin-left: 10px;
-        }
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        label {
-            display: block;
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            background: #1f2937;
-            border: 1px solid #374151;
-            border-radius: 8px;
-            color: white;
-            font-size: 15px;
-            outline: none;
-            transition: border 0.3s;
-        }
-        input[type="email"]:focus {
-            border-color: #2563eb;
-        }
-        button {
-            width: 100%;
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        button:hover {
-            background: #1d4ed8;
-        }
-    </style>
+    <title>Digital Toolkit - Premium Bundle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
 
-    <div class="card">
-        <div class="badge">Most Popular</div>
-        <h1>Grow Your Business 10x with our <span>Ultimate Digital Toolkit</span></h1>
-        <p class="subtitle">Get instant access to premium ready-to-use templates, assets, and guides. Save 100+ hours of manual work.</p>
-        
-        <div class="price-box">
-            <div class="bundle-title">Complete Bundle (Zip File)</div>
-            <div class="price">₹399 <span>₹1,999</span></div>
+    <div class="max-w-md w-full bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
+        <div class="p-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-center">
+            <span class="bg-blue-500 bg-opacity-30 text-blue-200 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">Most Popular</span>
+            <h1 class="text-2xl font-extrabold mt-2 tracking-tight">Grow Your Business 10x with our</h1>
+            <p class="text-xl font-bold text-blue-100 mt-1">Ultimate Digital Toolkit</p>
         </div>
 
-        <div class="input-group">
-            <label>Email Address</label>
-            <input type="email" id="email" placeholder="your@email.com" required>
-        </div>
+        <div class="p-6 space-y-6">
+            <p class="text-gray-400 text-center text-sm">Get instant access to premium ready-to-use templates, assets, and guides. Save 100+ hours of manual work.</p>
+            
+            <div class="bg-gray-700 bg-opacity-50 rounded-xl p-4 text-center border border-gray-600">
+                <p class="text-sm text-gray-400 font-medium">Complete Bundle (Zip File)</p>
+                <div class="flex items-center justify-center gap-2 mt-1">
+                    <span class="text-3xl font-black text-white">₹399</span>
+                    <span class="text-sm text-gray-500 line-through">₹1,999</span>
+                </div>
+            </div>
 
-        <button id="buy-button">
-            Buy Now & Download 🚀
-        </button>
+            <form id="payment-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
+                    <input type="email" id="email" required placeholder="name@example.com" 
+                        class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                </div>
+
+                <button type="submit" id="submit-btn"
+                    class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-900/30 flex items-center justify-center">
+                    <span id="btn-text">Get Instant Access Now</span>
+                </button>
+            </form>
+        </div>
     </div>
 
     <script>
-        // Stripe Key
-        const stripe = Stripe('pk_test_51TogMFDVJgN6KRSRyPc5cMtjf6JMUK3eZXevHUreKDW6nYWhrxoL1yJy9h2dNWoBN0uuAyRFohVs2m4AufW4dZ2F001haMGeUo');
-        
-        const buyButton = document.getElementById('buy-button');
+        const form = document.getElementById('payment-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
 
-        buyButton.addEventListener('click', async () => {
-            const emailInput = document.getElementById('email').value;
-            
-            if (!emailInput || !emailInput.includes('@')) {
-                alert('Kripya ek sahi Email Address daalein!');
-                return;
-            }
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
 
-            buyButton.disabled = true;
-            buyButton.innerText = 'Processing... Please Wait...';
+            // Button ko loading state me daalna
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            btnText.innerText = 'Processing... Please Wait...';
 
             try {
-                // Sahi naya Render URL lagaya hai (-1 ke sath)
-                const backend_url = "https://my-payment-website-1.onrender.com/create-checkout-session";
-                
-                const response = await fetch(backend_url, {
+                // Render Backend URL (Yahan dhyan de ki last me /create-checkout-session sahi se laga hai)
+                const response = await fetch('https://my-payment-website-1.onrender.com/create-checkout-session', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ email: emailInput })
+                    body: JSON.stringify({ email: email }),
                 });
 
-                const session = await response.json();
+                const data = await response.json();
 
-                if (session.id) {
-                    const result = await stripe.redirectToCheckout({
-                        sessionId: session.id,
-                    });
-                    
-                    if (result.error) {
-                        alert(result.error.message);
-                        buyButton.disabled = false;
-                        buyButton.innerText = 'Buy Now & Download 🚀';
-                    }
+                if (data.url) {
+                    // Stripe payment page par bhejna
+                    window.location.href = data.url;
                 } else {
                     alert('Backend se Session ID nahi mili. Kuch gadbad hai!');
-                    buyButton.disabled = false;
-                    buyButton.innerText = 'Buy Now & Download 🚀';
+                    resetButton();
                 }
-
             } catch (error) {
-                console.error("Error:", error);
-                alert("Backend se connect karne me dikkat aa rahi hai!");
-                buyButton.disabled = false;
-                buyButton.innerText = 'Buy Now & Download 🚀';
+                console.error('Error:', error);
+                alert('Backend se connect nahi ho pa raha hai. Server checks karein.');
+                resetButton();
             }
         });
+
+        function resetButton() {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            btnText.innerText = 'Get Instant Access Now';
+        }
     </script>
 </body>
 </html>
