@@ -75,7 +75,7 @@
         .price span {
             font-size: 16px;
             color: #6b7280;
-            text-decoration: line-line-through;
+            text-decoration: line-through;
             margin-left: 10px;
         }
         .input-group {
@@ -148,7 +148,7 @@
     </div>
 
     <script>
-        // Aapki asli Stripe Key yahan set ho gayi hai!
+        // Stripe Key
         const stripe = Stripe('pk_test_51TogMFDVJgN6KRSRyPc5cMtjf6JMUK3eZXevHUreKDW6nYWhrxoL1yJy9h2dNWoBN0uuAyRFohVs2m4AufW4dZ2F001haMGeUo');
         
         const buyButton = document.getElementById('buy-button');
@@ -165,8 +165,8 @@
             buyButton.innerText = 'Processing... Please Wait...';
 
             try {
-                // Hamara Render Backend URL jahan se payment session banega
-                const backend_url = "https://my-payment-website.onrender.com/create-checkout-session";
+                // Sahi naya Render URL lagaya hai (-1 ke sath)
+                const backend_url = "https://my-payment-website-1.onrender.com/create-checkout-session";
                 
                 const response = await fetch(backend_url, {
                     method: 'POST',
@@ -179,7 +179,6 @@
                 const session = await response.json();
 
                 if (session.id) {
-                    // Customer ko asli Stripe Checkout page par bhejna
                     const result = await stripe.redirectToCheckout({
                         sessionId: session.id,
                     });
