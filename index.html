@@ -43,7 +43,6 @@
     </div>
 
     <script>
-        // Aapki asli Stripe public key
         const stripe = Stripe('pk_test_51TogMFDVJgN6KRSRyPc5cMtjf6JMUK3eZXevHUreKDW6nYWhrxoL1yJy9h2dNWoBN0uuAyRFohVs2m4AufW4dZ2F001haMGeUo');
 
         const form = document.getElementById('payment-form');
@@ -54,13 +53,11 @@
             e.preventDefault();
             const email = document.getElementById('email').value;
 
-            // Loading state active karna
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
             btnText.innerText = 'Processing... Please Wait...';
 
             try {
-                // Sahi Render Backend URL
                 const response = await fetch('https://my-payment-website-1.onrender.com/create-checkout-session', {
                     method: 'POST',
                     headers: {
@@ -69,25 +66,29 @@
                     body: JSON.stringify({ email: email }),
                 });
 
-                const session = await response.json();
+                const data = await response.json();
 
-                // Agar backend se session ID milti hai toh checkout par bhejein
-                if (session.id) {
-                    const result = await stripe.redirectToCheckout({
-                        sessionId: session.id,
-                    });
-                    
+                // Agar Python backend direct pure Stripe checkout page ka URL de raha hai
+                if (data.url) {
+                    window.location.href = data.url;
+                    return;
+                }
+
+                // Agar sirf ID de raha hai
+                if (data.id) {
+                    const result = await stripe.redirectToCheckout({ sessionId: data.id });
                     if (result.error) {
                         alert(result.error.message);
                         resetButton();
                     }
                 } else {
-                    alert('Backend se Session ID nahi mili. Kuch gadbad hai!');
+                    // Agar backend se koi error message aaya hai toh woh dikhayega
+                    alert('Backend Error: ' + (data.error || 'Session ID nahi mili. Render par Environment Variables check karein.'));
                     resetButton();
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Backend se connect nahi ho pa raha hai.');
+                alert('Server se jodne mein dikkat aa rahi hai. Render dashboard par logs check karein.');
                 resetButton();
             }
         });
