@@ -3,49 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Digital Toolkit</title>
+    <title>Ultimate Digital Hub</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 text-white font-sans antialiased">
 
-    <div class="min-h-screen flex flex-col justify-center items-center px-4 text-center">
-        <span class="bg-blue-600 text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 text-blue-100">Most Popular</span>
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 max-w-3xl leading-tight">
-            Grow Your Business 10x with our <span class="text-blue-500">Ultimate Digital Toolkit</span>
-        </h1>
-        <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl">
-            Get instant access to premium ready-to-use templates, assets, and guides. Save 100+ hours of manual work.
-        </p>
-
-        <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-700 max-w-sm w-full text-left">
-            <h3 class="text-xl font-bold mb-2 text-center">⚡ Complete Bundle (Zip File)</h3>
-            <p class="text-gray-400 text-sm mb-6 text-center">Instant Download Link Sent to Email</p>
-            
-            <div class="flex justify-center items-baseline mb-6">
-                <span class="text-4xl font-extrabold">₹399</span>
-                <span class="text-gray-500 line-through ml-2 text-sm">₹1,999</span>
-            </div>
-
-            <div class="mb-6">
-                <label class="text-sm text-gray-400 block mb-1">Email Address</label>
-                <input type="email" id="custEmail" placeholder="your@email.com" class="w-full p-3 rounded-xl bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-            </div>
-
-            <a href="https://rzp.io/l/b8bOQBy" target="_blank" onclick="return checkEmail()" class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition duration-200 shadow-lg shadow-blue-500/20 text-center cursor-pointer">
-                Buy Now & Download 🚀
-            </a>
+    <header class="border-b border-gray-800 bg-gray-900 sticky top-0 z-50 py-4 px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-black tracking-wider text-blue-500">DIGITAL HUB</h1>
+        <div class="flex gap-4">
+            <input type="text" placeholder="Search templates, assets..." class="bg-gray-800 border border-gray-700 rounded-lg px-4 py-1.5 text-sm text-white focus:outline-none focus:border-blue-500">
+            <button class="bg-blue-600 text-xs font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition">Login</button>
         </div>
-    </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div class="text-center mb-16">
+            <span class="bg-blue-600/20 text-blue-400 text-xs font-bold uppercase px-3 py-1 rounded-full border border-blue-500/30">Global Digital Store</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-4 leading-tight">
+                Premium Kits & <span class="text-blue-500">Ready-To-Use</span> Assets
+            </h2>
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+                Download top-quality resume templates, business docs, Excel sheets, and AI prompts instantly.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-blue-400 uppercase tracking-widest block mb-1">Bundle</span>
+                    <h3 class="text-xl font-bold mb-2">⚡ Ultimate Digital Toolkit</h3>
+                    <p class="text-gray-400 text-sm mb-4">Complete collection of all premium templates, scripts, and business documents.</p>
+                    <div class="text-xs text-gray-500 space-y-1 mb-6">
+                        <p>📁 Format: ZIP File</p>
+                        <p>✅ Virus Scanned & Trusted</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-baseline mb-4">
+                        <span class="text-3xl font-black">₹399</span>
+                        <span class="text-gray-500 line-through text-xs ml-2">₹1,999</span>
+                    </div>
+                    
+                    <input type="email" id="custEmail" placeholder="Enter your email" class="w-full p-2.5 mb-3 rounded-lg bg-gray-700 border border-gray-600 text-sm text-white focus:outline-none focus:border-blue-500">
+                    
+                    <a href="https://rzp.io/l/b8bOQBy" target="_blank" onclick="return checkEmail()" class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-lg text-center transition cursor-pointer text-sm">
+                        Buy Now 🚀
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-gray-800/50 border border-gray-800 rounded-2xl p-6 flex flex-col justify-between opacity-75">
+                <div>
+                    <span class="text-xs font-bold text-purple-400 uppercase tracking-widest block mb-1">Career</span>
+                    <h3 class="text-xl font-bold mb-2">📄 ATS-Friendly Resumes</h3>
+                    <p class="text-gray-400 text-sm mb-4">Win more interviews with clean, editable Word & PDF resume structures.</p>
+                </div>
+                <div>
+                    <span class="inline-block bg-gray-700 text-gray-300 text-xs px-2.5 py-1 rounded-md mb-4 font-semibold">Coming Soon</span>
+                    <button disabled class="w-full bg-gray-700 text-gray-400 py-2 rounded-lg text-sm cursor-not-allowed">Locked</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-800/50 border border-gray-800 rounded-2xl p-6 flex flex-col justify-between opacity-75">
+                <div>
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-1">Finance</span>
+                    <h3 class="text-xl font-bold mb-2">📊 Premium Excel Dashboard</h3>
+                    <p class="text-gray-400 text-sm mb-4">Automated financial trackers, invoices, and business management sheets.</p>
+                </div>
+                <div>
+                    <span class="inline-block bg-gray-700 text-gray-300 text-xs px-2.5 py-1 rounded-md mb-4 font-semibold">Coming Soon</span>
+                    <button disabled class="w-full bg-gray-700 text-gray-400 py-2 rounded-lg text-sm cursor-not-allowed">Locked</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
 
     <script>
         function checkEmail() {
             var userEmail = document.getElementById('custEmail').value;
-            
             if(!userEmail) {
                 alert("Kripya pehle apna Email dalein!");
-                return false; // Agar email nahi dala toh link nahi khulega
+                return false;
             }
-            return true; // Email dalne par Razorpay link khul jayega
+            return true;
         }
     </script>
 </body>
